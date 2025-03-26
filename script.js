@@ -58,14 +58,16 @@ function increaseScore() {
 }
 
 function End() {
-    clearInterval(moveTimer);
     clearInterval(scoreTimer);
-    localStorage.setItem("HighScore", score);
+    clearInterval(moveTimer);
+    if(score > localStorage.getItem("HighScore")) {
+        localStorage.setItem("HighScore", score);
+    }
     circle.classList.add("dead");
     setTimeout(ResetGame, 1600);
 }
 
 function ResetGame() {
-    alert("You hit a wall! Game over\nHigh Score: " + score);
+    alert("You hit a wall! Game over\nHigh Score: " + localStorage.getItem("HighScore"));
     location.reload();
 }
