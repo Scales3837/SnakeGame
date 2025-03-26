@@ -28,5 +28,34 @@ body {
 
 #score {
 	color: white;
-	font-size: 20px;
+	font-size: 32px;
+	font-weight: 600;
+	display: inline;
+	text-align: center;
+}
+
+#highscore {
+	color: white;
+	font-size: 32px;
+	font-weight: 600;
+	display: inline;
+	text-align: center;
+}
+
+@keyframes deathAnimation {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.5);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
+
+.dead {
+    animation: deathAnimation 1.5s ease-in-out forwards;
 }
